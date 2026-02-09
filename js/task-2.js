@@ -27,18 +27,6 @@ const images = [
 
 const galleryEl = document.querySelector('.gallery');
 
-// Створюємо HTML-розмітку для всіх зображень за допомогою map
-const galleryMarkup = images
-  .map(({ url, alt }) => 
-    `<li class="gallery-item">
-       <img src="${url}" alt="${alt}" width="400" height="300">
-     </li>`
-  )
-  .join('');
-
-// Додаємо розмітку в DOM одним викликом
-galleryEl.insertAdjacentHTML('beforeend', galleryMarkup);
-
 const galleryItems = images.map(({ url, alt }) => {
   const li = document.createElement('li');
   li.classList.add('gallery-item');
@@ -53,4 +41,4 @@ const galleryItems = images.map(({ url, alt }) => {
   return li;
 });
 
-galleryEl.append(...galleryItems);
+galleryEl.append(...galleryItems);  
